@@ -14,16 +14,6 @@ using ::testing::ValuesIn;
 using ::std::tuple;
 using ::std::string;
 using ::std::vector;
-// Ejercicio01.cpp
-#include "Ejercicio01.h"
-#include <queue> // Necesitas incluir esto para std::priority_queue
-
-// ... otras implementaciones de la clase Ejercicio01 ...
-
-Node<int>* Ejercicio01::mergeLists(Node<Node<int>*>* lists) {
-	// Aquí va la implementación que proporcionaste
-}
-
 
 namespace Parcial03Tests {
 
@@ -42,7 +32,7 @@ namespace Parcial03Tests {
 			std::tie(param, expectedHead) = GetParam();
 		}
 
-		void TearDown() override{
+		void TearDown() override {
 			delete e01;
 			e01 = nullptr;
 		}
@@ -52,8 +42,8 @@ namespace Parcial03Tests {
 				return vector<int>();
 
 			int count = lists.size();
-			
-			vector<vector<int>> result(lists.begin(), lists.end()); 
+
+			vector<vector<int>> result(lists.begin(), lists.end());
 
 			while (count > 1) {
 				for (int i = 0; i < count / 2; ++i) {
@@ -62,7 +52,7 @@ namespace Parcial03Tests {
 
 					std::merge(result[i].begin(), result[i].end(),
 						result[count - i - 1].begin(), result[count - i - 1].end(),
-						std::back_inserter(r), 
+						std::back_inserter(r),
 						compareAscending);
 
 					result[i] = r;
@@ -73,7 +63,7 @@ namespace Parcial03Tests {
 
 			return result[0];
 		}
-	
+
 		static void readFromFile(string filepath, vector<tuple<vector<vector<int>>, vector<int>>>& params) {
 			std::ifstream paramsFile(filepath);
 			string line;
@@ -84,7 +74,7 @@ namespace Parcial03Tests {
 				string pipeLine;
 				while (std::getline(pipeStream, pipeLine, '|')) {
 					std::stringstream commaStream(pipeLine);
-					
+
 					vector<int> nums;
 					string commaLine;
 					while (std::getline(commaStream, commaLine, ',')) {
@@ -141,7 +131,7 @@ namespace Parcial03Tests {
 		auto lists = buildListOfLists(param);
 
 		Node<int>* head = nullptr;
-		
+
 		ASSERT_DURATION_LE(60000,
 			head = e01->mergeLists(lists););
 

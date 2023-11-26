@@ -115,10 +115,10 @@ namespace Parcial03Tests {
 		int i = 0;
 
 		for (auto op : operations) {
-			GTEST_COUT << " - Instruccion [" << i << "]: " 
-				<< op->funcName << "(" 
+			GTEST_COUT << " - Instruccion [" << i << "]: "
+				<< op->funcName << "("
 				<< op->key << ","
-				<< (op->type == VOID_TYPE ? op->value + "," : std::to_string(op->timestamp) + "") 
+				<< (op->type == VOID_TYPE ? op->value + "," : std::to_string(op->timestamp) + "")
 				<< (op->type == VOID_TYPE ? std::to_string(op->timestamp) : "")
 				<< ")" << std::endl;
 
@@ -128,7 +128,7 @@ namespace Parcial03Tests {
 				actualResult = timeMapOps.at(op->funcName)(timeMap, op););
 
 			if (op->type == FUNC_TYPE) {
-				ASSERT_EQ(actualResult, op->expected) << "Error al llamar la instruccion [" << i << "] -> " 
+				ASSERT_EQ(actualResult, op->expected) << "Error al llamar la instruccion [" << i << "] -> "
 					<< op->funcName << "().\nSe esperaba [" << op->expected << "], pero se encontro [" << actualResult << "]";
 			}
 

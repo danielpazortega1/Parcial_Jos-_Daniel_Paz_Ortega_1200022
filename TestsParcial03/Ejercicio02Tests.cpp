@@ -46,7 +46,7 @@ namespace Parcial03Tests {
 				while (std::getline(commaStream, commaLine, ',')) {
 					r.push_back(commaLine);
 				}
-				
+
 				params.push_back({ line1, r });
 			}
 
@@ -67,7 +67,7 @@ namespace Parcial03Tests {
 	}
 
 	TEST_P(E02Tests, E02DNA) {
-		
+
 		Node<char>* head = buildList(param);
 
 		vector<string>* actualResult;
