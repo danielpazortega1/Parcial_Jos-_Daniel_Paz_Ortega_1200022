@@ -1,15 +1,12 @@
 #include "Ejercicio01.h"
-#include <queue>
 
-Node<int>* Ejercicio01::mergeLists(Node<Node<int>*>* lists) {
-    if (!lists || !(lists->value)) return nullptr;
+Node<int>* Ejercicio01::mergeLists(Node<Node<int>> lists)
+{
+    if (!lists || !lists->value) return nullptr;
 
-    auto compare = [](Node<int>* a, Node<int>* b) {
-        return a->value > b->value;
-        };
-    std::priority_queue<Node<int>*, std::vector<Node<int>*>, decltype(compare)> queue(compare);
+    std::priority_queue<Node<int>, std::vector<Node<int>>, CompareNode> queue;
 
-    Node<Node<int>*>* currentList = lists;
+    Node<Node<int>> currentList = lists;
 
     while (currentList) {
         if (currentList->value) queue.push(currentList->value);
@@ -39,3 +36,4 @@ Node<int>* Ejercicio01::mergeLists(Node<Node<int>*>* lists) {
 
     return resultHead;
 }
+
