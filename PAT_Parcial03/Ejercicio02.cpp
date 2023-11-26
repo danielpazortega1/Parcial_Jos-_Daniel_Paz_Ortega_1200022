@@ -34,9 +34,6 @@ vector<string>* Ejercicio02::findRepeatedDnaSequences(Node<char>* head)
             dnaSequence.erase(0, 1);
             dnaSequence += current->value;
 
-            // Check if this sequence has already been seen.
-            if (sequenceCount.find(dnaSequence) != sequenceCount.end()) {
-                // If this is the second time we've seen this sequence, add it to the result.
                 if (sequenceCount[dnaSequence] == 1) {
                     result->push_back(dnaSequence);
                 }
