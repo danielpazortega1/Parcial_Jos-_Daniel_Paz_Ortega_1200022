@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <string>
-
+#include <iostream>
 #include "Node.h"
 
 using std::vector;
@@ -13,4 +13,3 @@ class Ejercicio02
 public:
 	vector<string>* findRepeatedDnaSequences(Node<char>* head);
 };
-

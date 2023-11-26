@@ -1,16 +1,12 @@
-#pragma once
-
 #include <string>
+#include <map>
 
-using std::string;
-
-class TimeMap
-{
+class TimeMap {
 public:
-	TimeMap();
+    TimeMap();
+    void set(std::string key, std::string value, int timestamp);
+    std::string get(std::string key, int timestamp);
 
-	void set(string key, string value, int timestamp);
-
-	string get(string key, int timestamp);
+private:
+    std::map<std::string, std::map<int, std::string>> data;
 };
-
