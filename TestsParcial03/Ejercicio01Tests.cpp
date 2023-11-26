@@ -14,6 +14,16 @@ using ::testing::ValuesIn;
 using ::std::tuple;
 using ::std::string;
 using ::std::vector;
+// Ejercicio01.cpp
+#include "Ejercicio01.h"
+#include <queue> // Necesitas incluir esto para std::priority_queue
+
+// ... otras implementaciones de la clase Ejercicio01 ...
+
+Node<int>* Ejercicio01::mergeLists(Node<Node<int>*>* lists) {
+	// Aquí va la implementación que proporcionaste
+}
+
 
 namespace Parcial03Tests {
 
